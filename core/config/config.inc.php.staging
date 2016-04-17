@@ -7,9 +7,9 @@ $database_server = 'localhost';
 $database_user = 'modx';
 $database_password = '1MfYce1sZKLjGNjdTrNP';
 $database_connection_charset = 'latin1';
-$dbase = 'modx';
+$dbase = 'kofctnor_modx';
 $table_prefix = 'modx_';
-$database_dsn = 'mysql:host=localhost;dbname=modx;charset=latin1';
+$database_dsn = 'mysql:host=localhost;dbname=kofctnor_modx;charset=latin1';
 $config_options = array (
 );
 $driver_options = array (
