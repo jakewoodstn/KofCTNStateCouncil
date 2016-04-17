@@ -1,0 +1,79 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'TemplateVars' => 
+    array (
+      'ca56eaf6787d93bcc18250174afb137e' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modTemplateVar',
+        'object' => '{"id":1,"source":0,"property_preprocess":0,"type":"colorpicker","name":"colorpicker","caption":"ColorPicker","description":"Color Picker for MODx Revolution","editor_type":0,"category":0,"locked":0,"elements":"","rank":0,"display":"default","default_text":"","properties":"a:0:{}","input_properties":null,"output_properties":null,"static":0,"static_file":"","content":"","display_params":""}',
+        'guid' => '53c2604dbf2b0fc305463ae3c068ab27',
+        'native_key' => 1,
+        'signature' => '48e40168a6881496262b281728b57107',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'colorpicker',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"colorpicker-1.0.2-rc2\\/modCategory\\/081bd656ebfb522109b113daf08e8116\\/0\\/","target":"return MODX_CORE_PATH . \'model\\/modx\\/processors\\/element\\/tv\\/renders\\/mgr\\/input\\/\';","name":"colorpicker.class.php"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"colorpicker-1.0.2-rc2\\/modCategory\\/081bd656ebfb522109b113daf08e8116\\/1\\/","target":"return MODX_MANAGER_PATH . \'templates\\/default\\/element\\/tv\\/renders\\/input\\/\';","name":"colorpicker.tpl"}',
+    ),
+    2 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"colorpicker-1.0.2-rc2\\/modCategory\\/081bd656ebfb522109b113daf08e8116\\/2\\/","target":"return MODX_CORE_PATH . \'model\\/modx\\/processors\\/element\\/tv\\/renders\\/mgr\\/properties\\/\';","name":"colorpicker.php"}',
+    ),
+    3 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"colorpicker-1.0.2-rc2\\/modCategory\\/081bd656ebfb522109b113daf08e8116\\/3\\/","target":"return MODX_CORE_PATH . \'model\\/modx\\/processors\\/element\\/tv\\/renders\\/web\\/output\\/\';","name":"colorpicker.class.php"}',
+    ),
+    4 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"colorpicker-1.0.2-rc2\\/modCategory\\/081bd656ebfb522109b113daf08e8116\\/4\\/","target":"return MODX_MANAGER_PATH . \'templates\\/default\\/element\\/tv\\/renders\\/properties\\/\';","name":"colorpicker.tpl"}',
+    ),
+    5 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"colorpicker-1.0.2-rc2\\/modCategory\\/081bd656ebfb522109b113daf08e8116\\/5\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"colorpicker"}',
+    ),
+    6 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"colorpicker-1.0.2-rc2\\/modCategory\\/081bd656ebfb522109b113daf08e8116\\/6\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"colorpicker"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ae7bed0fd52ca8ceb6e795e30a04db86',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '081bd656ebfb522109b113daf08e8116',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"ColorPicker"}',
+);

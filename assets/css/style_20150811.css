@@ -1,0 +1,125 @@
+body {
+background:#F2F0F0;
+margin:0 20px;
+}
+
+#container {
+height:99.9%;
+min-height:100%;
+width:750px;
+text-align:left;
+position:relative;
+overflow:visible;
+margin:auto;
+}
+
+#content {
+margin-top:220px;
+}
+
+/*
+{
+}
+*/
+.clearing {
+clear:both;
+height:0;
+}
+
+#banner {
+position:absolute;
+top:10px;
+height:175px;
+width:750px;
+z-index:74;
+background:url(../images/KCTN_trans.png) no-repeat center center;
+background-size:80%;
+margin:0 8px;
+}
+
+#wrapper {
+background:#FFF;
+position:relative;
+width:760px;
+border:1px solid #FFF;
+margin:0 auto;
+box-shadow: 0 4px 4px #bbb;
+	-webkit-box-shadow: 0px 4px 4px #bbb;
+	-moz-box-shadow: 0 4px 4px #bbb;
+}
+
+#header {
+position:absolute;
+top:0;
+width:99%;
+margin:0 .5%;
+}
+
+#ajaxmenu {
+position:absolute;
+top:180px;
+width:99%;
+margin:0 .5%;
+}
+
+#hr {
+
+border:0;
+height:1px;
+background:#000;	
+background-image: -webkit-linear-gradient(left, #FFF, #000, #FFF);
+background-image: -moz-linear-gradient(left, #FFF, #000, #FFF);
+background-image: -ms-linear-gradient(left, #FFF, #000, #FFF);
+background-image: -o-linear-gradient(left, #FFF, #000, #FFF);
+margin-bottom:20px;
+}
+
+
+#newsRotator{width:600px;padding:0 75px;}
+.newsCaption {text-align:right;}
+.newsImage{max-height:350px}
+#newsArticles{width:100%;height:500px;border:none;overflow-y:scroll;overflow-x:hidden}
+
+#formsSection h1, h2, h3, h4 {
+	font: bold 1em/1.5em Georgia, 'Times New Roman', Times, serif;
+	color: #444;
+	padding-left:15px;
+	margin:5px 0px;
+}
+#formsSection h1 { font-size: 3.7em; font-weight: normal; letter-spacing: -2px; }
+#formsSection h2 { font-size: 2.8em; font-weight: normal; color: #663333; }
+#formsSection h3 { font-size: 2em; font-weight: normal; letter-spacing: -0.5px; }
+#formsSection h4 { font-size: 1.3em; padding-top:5px; }
+#formsSection p {padding:0 10%;}
+#formsSection ul {
+    list-style-type: none;
+    padding:0px 25px;
+    margin: 0px 10px;
+}
+
+#formsSection .leftLinks{float:left;padding-bottom:15px;}
+#formsSection .rightLinks{float:right; width:50%;padding-bottom:15px;}
+#formsSection #downloadable {clear:both;}
+
+#formsSection h2.title {
+	font: normal 2.2em Georgia, 'Times New Roman', Times, Serif;
+	color: #444;
+	letter-spacing: -2.2px;
+	margin-left: 5px;
+	margin-right: 15px;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+
+h2.fancytitle {
+	font: normal 2.2em Georgia, 'Times New Roman', Times, Serif;
+	color: #444;
+	letter-spacing: -2.2px;
+	margin-left: 5px;
+	margin-right: 15px;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #ebebeb;
+}

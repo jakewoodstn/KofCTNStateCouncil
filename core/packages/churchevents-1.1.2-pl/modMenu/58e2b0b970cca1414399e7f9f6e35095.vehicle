@@ -1,0 +1,50 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => 
+  array (
+    'Action' => 
+    array (
+      '015216e7b64b8f618babcae7e9a6f320' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'namespace',
+          1 => 'controller',
+        ),
+        'class' => 'modAction',
+        'object' => '{"id":1,"namespace":"churchevents","controller":"controllers\\/index","haslayout":1,"lang_topics":"churchevents:default","assets":"","help_url":"","parent":0}',
+        'guid' => '8b07d99f8fa42fcb0c76bc858df64bd0',
+        'native_key' => 1,
+        'signature' => '0b5f890dceb8d1f13600a279e9d348d7',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'churchevents',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '96ce38d406754af4c7eb2c3784f2fae4',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '58e2b0b970cca1414399e7f9f6e35095',
+  'native_key' => 'churchevents',
+  'object' => '{"text":"churchevents","parent":"components","action":1,"description":"churchevents.desc","icon":"","menuindex":0,"params":"","handler":"","permissions":""}',
+);

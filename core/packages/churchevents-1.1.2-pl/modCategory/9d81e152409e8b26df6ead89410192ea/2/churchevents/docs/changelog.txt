@@ -1,0 +1,122 @@
+Changelog for ChurchEvents.
+
+ChurchEvents 1.1.2 pl 
+===============
+   - fixes #16 Yes/No in Manager
+   - fixes PHP Warning Notices
+
+ChurchEvents 1.1.1 pl 
+===============
+   - fixes #14 Noon and Midnight issue
+
+ChurchEvents 1.1 pl 
+===============
+   - fixes #8 Filters from $_REQUEST are not applied to the ChurchEventsList
+   - added #4 You can now set default Calendar and Category and added an Admin filter Chunk option - calAdminFilterTpl
+   - partial fix #11 Removed saving vars as cookies, now only in sessions
+   - added #12 Today button
+   - fixes #5 Date format now works for Javascript
+   - fixes #13 Allow login via current context
+   - fixes #10 Removed bad code in _calFilterTpl
+   - updated template, just put the <base> before the <link>
+
+
+ChurchEvents 1.0 pl 
+===============
+- fixed minor URL error in Year view
+- minor CSS change for the day view
+
+ChurchEvents 1.0 rc2 
+===============
+- minor error set a default view.
+
+ChurchEvents 1.0 rc1 
+===============
+- fixed day view SQL error
+- change the day view chunks (DayHolderTpl & DayEventTpl) and added CSS to the assets/components/churchevents/css/calendar.css file
+- added churchevents_locationdescriptiontpl.chunk.tpl for a locaitons view
+
+
+ChurchEvents 1.0 beta3 
+===============
+- added iCal export 
+- added RSS with ChurchEventsRSS snippet with EventsRssTpl and EventsRssItemTpl chunk 
+    and rssPageID System Setting
+- added System Setting: rssPageID with supporting lexicon items
+- added location filter for ChurchEventsCalednar snippet with 2 more Chunks: 
+    ChurchEvents_CalFilterLocationTpl and ChurchEvents_CalFilterLocationTypeTpl
+- added Event Search by title
+- removed ChurchEvents_CalSearchTpl Chunk - this was not used.
+- added a week view - new properties options: weekColumnHeadTpl, weekColumnTpl, weekRowTpl, weekTableTpl, weekEventTpl, weekDayHolderTpl
+- added a day view and ChurchEvents_DayHolderTpl and ChurchEvents_DayEventTpl Chunks
+- added a year view - ChurchEvents_YearTableTpl and ChurchEvents_YearColumnTpl Chunks
+- fixed minor error on calulating time and repeating events
+- added custom chunk caching class to improve preformance 
+
+ChurchEvents 1.0 beta2 
+===============
+- fixed small build error
+- fixed URL error
+- fixed js error
+- changed how skin names work they no longer require the "_" at the end.
+
+
+ChurchEvents 1.0 beta1 
+===============
+- added colorPicker for the categories, you must install the ColorPicker package to use: http://modx.com/extras/package/colorpicker
+- added complete auto installer
+
+ChurchEvents 1.0 alpha4 
+===============
+- added COLUMN exceptions to church_events db table for repeating events that need one or more exceptions
+- added extend feature
+- switched to jQuery from Mootools for the add/edit form page
+- added TinyMCE editor to Public Description on add/edit form.  
+    Note you will have to add in a snippet for this feature to work.
+    See: http://forums.modx.com/thread/72206/tinymce-addon-and-using-it-with-forms#dis-post-401943
+- More Lexicon options
+- Many small bug fixes
+
+
+ChurchEvents 1.0 alpha 
+===============
+- Complete code rewrite and several new features.  DB structure has changed some but should upgrade.
+
+
+ChurchEvents 0.3 beta2
+===============
+- Minor fix for created URLs
+
+ChurchEvents 0.3 beta
+===============
+- Minor Windows bug fix for PHP 5.2.*
+- JS calendar now starts on Sunday.
+- Private events now show as Reserved for those not logged in
+- Allow to edit a single instance of a repeating event 
+- Added the makeUrl scheme option: http://rtfm.modx.com/display/revolution20/modX.makeUrl
+    ex: [[!churchevents? &scheme=`full` ]]
+
+
+ChurchEvents 0.2 beta2
+===============
+- Bug fixed for All day and none repeating events storing in the DB correctly.
+- Fixed repeating event error for months
+- Fixed request event bug
+
+ChurchEvents 0.2 beta1
+===============
+- Bug fixed for adding/editing categories
+- Added color picker for categories - note this needs some work though.
+- Added basic request option
+- Many minor bug fixes
+
+
+ChurchEvents 0.1 beta2
+===============
+- Added Caledars
+- Added Categories
+- Other Minor fixes
+
+ChurchEvents 0.1 beta1
+===============
+- Initial beta release

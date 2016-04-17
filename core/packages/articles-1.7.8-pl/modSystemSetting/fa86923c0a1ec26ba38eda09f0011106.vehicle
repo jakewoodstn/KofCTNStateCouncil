@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'articles',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'b8aa5eb44c2a2ef9b69bad7496086dd1',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'fa86923c0a1ec26ba38eda09f0011106',
+  'native_key' => 'articles.default_article_template',
+  'object' => '{"key":"articles.default_article_template","value":0,"xtype":"modx-combo-template","namespace":"articles","area":"site","editedon":null}',
+);

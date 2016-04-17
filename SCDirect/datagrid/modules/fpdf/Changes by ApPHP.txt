@@ -1,0 +1,5 @@
+CHANGES
+
+---------------
+
+1. [27.07.2009] [#001] addedd error handling on file opening in method Output

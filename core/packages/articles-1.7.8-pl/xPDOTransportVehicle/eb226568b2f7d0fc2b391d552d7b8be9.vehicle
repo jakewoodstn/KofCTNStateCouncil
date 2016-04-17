@@ -1,0 +1,32 @@
+<?php return array (
+  'class' => 'xPDOTransportVehicle',
+  'object' => 
+  array (
+    'source' => 'articles-1.7.8-pl/xPDOTransportVehicle/eb226568b2f7d0fc2b391d552d7b8be9/',
+    'target' => 'return MODX_CORE_PATH . \'packages/\';',
+    'name' => 'taglister-1.1.7-pl.transport.zip',
+  ),
+  'vehicle_class' => 'xPDOTransportVehicle',
+  'namespace' => 'articles',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.8-pl\\/xPDOTransportVehicle\\/eb226568b2f7d0fc2b391d552d7b8be9.resolve.taglister.resolver","type":"php","name":"resolve.taglister"}',
+    ),
+  ),
+  'validate' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.8-pl\\/xPDOTransportVehicle\\/eb226568b2f7d0fc2b391d552d7b8be9.validate.taglister.validator","type":"php","name":"validate.taglister"}',
+    ),
+  ),
+  'vehicle_package' => 'transport',
+  'guid' => '4d4e8e976ea0c439bcdba857ac5d33e8',
+  'package' => '',
+  'signature' => 'eb226568b2f7d0fc2b391d552d7b8be9',
+  'native_key' => '4d4e8e976ea0c439bcdba857ac5d33e8',
+);

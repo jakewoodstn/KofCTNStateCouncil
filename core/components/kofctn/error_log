@@ -1,0 +1,2 @@
+[12-Aug-2015 14:19:48 America/Denver] PHP Notice:  Undefined variable: modx in /home2/kofctnor/public_html/core/components/kofctn/profile.kofctn.php on line 7
+[12-Aug-2015 14:19:48 America/Denver] PHP Fatal error:  Call to a member function getOption() on a non-object in /home2/kofctnor/public_html/core/components/kofctn/profile.kofctn.php on line 7

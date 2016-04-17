@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve"
+><fields
+><field name="Submit"
+/><field name="caddress1"
+><value
+>412 Bobby Dr.</value
+></field
+><field name="ccity"
+><value
+>Franklin</value
+></field
+><field name="ccphone"
+><value
+>615-496-7607</value
+></field
+><field name="ccspouse"
+><value
+>Janice</value
+></field
+><field name="cemail"
+><value
+>rrkempf@comcast.net</value
+></field
+><field name="cfname"
+><value
+>Ronald</value
+></field
+><field name="chphone"
+><value
+>615-794-0631</value
+></field
+><field name="clname"
+><value
+>Kempf</value
+></field
+><field name="cmi"
+><value
+>R</value
+></field
+><field name="cnname"
+><value
+>Ron</value
+></field
+><field name="cposition"
+><value
+>Grand Knight</value
+></field
+><field name="csnname"
+><value
+>Janice</value
+></field
+><field name="cstate"
+><value
+>TN</value
+></field
+><field name="ctitle"
+><value
+>Mr.</value
+></field
+><field name="cuserid"
+><value
+>2181861</value
+></field
+><field name="czip"
+><value
+>37069</value
+></field
+><field name="fratyear"
+><value
+>thisyear</value
+></field
+><field name="icouncil"
+><value
+>7764</value
+></field
+></fields
+><ids original="D57F3A537C19564DB892CE54AF652F77" modified="C95B5C12943A3E4EAC91C22503AA057E"
+/></xfdf
+>

@@ -1,0 +1,32 @@
+<?php return array (
+  'class' => 'xPDOTransportVehicle',
+  'object' => 
+  array (
+    'source' => 'articles-1.7.10-pl/xPDOTransportVehicle/6a59bbb17bf4f20d209af6f5cb6569bd/',
+    'target' => 'return MODX_CORE_PATH . \'packages/\';',
+    'name' => 'taglister-1.1.7-pl.transport.zip',
+  ),
+  'vehicle_class' => 'xPDOTransportVehicle',
+  'namespace' => 'articles',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.10-pl\\/xPDOTransportVehicle\\/6a59bbb17bf4f20d209af6f5cb6569bd.resolve.taglister.resolver","type":"php","name":"resolve.taglister"}',
+    ),
+  ),
+  'validate' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.10-pl\\/xPDOTransportVehicle\\/6a59bbb17bf4f20d209af6f5cb6569bd.validate.taglister.validator","type":"php","name":"validate.taglister"}',
+    ),
+  ),
+  'vehicle_package' => 'transport',
+  'guid' => '19e99f2777ba1800095752eb4792f0d1',
+  'package' => '',
+  'signature' => '6a59bbb17bf4f20d209af6f5cb6569bd',
+  'native_key' => '19e99f2777ba1800095752eb4792f0d1',
+);

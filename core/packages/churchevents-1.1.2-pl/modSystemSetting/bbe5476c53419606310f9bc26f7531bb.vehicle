@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'churchevents',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'aa43b44c5e0f108a0f4572339adee3f1',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'bbe5476c53419606310f9bc26f7531bb',
+  'native_key' => 'churchevents.extended',
+  'object' => '{"key":"churchevents.extended","value":"","xtype":"textarea","namespace":"churchevents","area":"ChurchEvents","editedon":null}',
+);

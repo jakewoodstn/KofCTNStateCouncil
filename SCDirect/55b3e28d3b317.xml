@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve"
+><fields
+><field name="Submit"
+/><field name="caddress1"
+><value
+>10211 Castlebridge Ct</value
+></field
+><field name="ccity"
+><value
+>Knoxville</value
+></field
+><field name="ccphone"
+><value
+>865-805-2974</value
+></field
+><field name="ccspouse"
+><value
+>Ida</value
+></field
+><field name="cemail"
+><value
+>sid.randall@gmail.com</value
+></field
+><field name="cfname"
+><value
+>Sidney</value
+></field
+><field name="chphone"
+><value
+>865-966-2832</value
+></field
+><field name="clname"
+><value
+>Randall</value
+></field
+><field name="cmi"
+><value
+>R</value
+></field
+><field name="cnname"
+><value
+>Sid</value
+></field
+><field name="cposition"
+><value
+>Grand Knight</value
+></field
+><field name="cstate"
+><value
+>TN</value
+></field
+><field name="csuffix"
+><value
+>Jr.</value
+></field
+><field name="ctitle"
+><value
+>Mr.</value
+></field
+><field name="cuserid"
+><value
+>4623174</value
+></field
+><field name="czip"
+><value
+>37922</value
+></field
+><field name="fratyear"
+><value
+>thisyear</value
+></field
+><field name="iassembly"
+><value
+>1083</value
+></field
+><field name="icouncil"
+><value
+>15706</value
+></field
+></fields
+><ids original="D57F3A537C19564DB892CE54AF652F77" modified="C95B5C12943A3E4EAC91C22503AA057E"
+/></xfdf
+>

@@ -1,0 +1,206 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      '97b5940246fd7099c350da35cb76206e' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"sample.ArticlesLatestPostTpl","description":"The tpl row for the latest post. Duplicate this to override it.","editor_type":0,"category":0,"cache_type":0,"snippet":"<li>\\n  <a href=\\"[[~[[+id]]]]\\">[[+pagetitle]]<\\/a>\\n  [[+publishedon:notempty=`<br \\/> - [[+publishedon:strtotime:date=`%b %d, %Y`]]`]]\\n<\\/li>","locked":0,"properties":null,"static":0,"static_file":"","content":"<li>\\n  <a href=\\"[[~[[+id]]]]\\">[[+pagetitle]]<\\/a>\\n  [[+publishedon:notempty=`<br \\/> - [[+publishedon:strtotime:date=`%b %d, %Y`]]`]]\\n<\\/li>"}',
+        'guid' => 'faee43cf72b2e8a9090ec06b9cead34f',
+        'native_key' => NULL,
+        'signature' => 'b7803d18d598bad204b5396e0ad09fad',
+      ),
+      '3c96892d6b3a9d3c1c9e6d30420b81de' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"sample.ArticleRowTpl","description":"The tpl row for each post when listed on the main Articles Container page. Duplicate this to override it.","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"post\\">\\n    <h2 class=\\"title\\"><a href=\\"[[~[[+id]]]]\\">[[+pagetitle]]<\\/a><\\/h2>\\n    <p class=\\"post-info\\">[[%articles.posted_by]] <a href=\\"[[~[[*id]]]]author\\/[[+createdby:userinfo=`username`]]\\">[[+createdby:userinfo=`username`]]<\\/a> [[+tv.articlestags:notempty=` | <span class=\\"tags\\">[[%articles.tags]]: [[!tolinks? &items=`[[+tv.articlestags]]` &target=`[[*id]]` &useTagsFurl=`1`]]<\\/span>`]]<\\/p>\\n    <div class=\\"entry\\">\\n\\t    <p>[[+introtext:default=`[[+content:ellipsis=`400`]]`]]<\\/p>\\n    <\\/div>\\n    <p class=\\"postmeta\\">\\n      <span class=\\"links\\">\\n        <a href=\\"[[~[[+id]]]]\\" class=\\"readmore\\">[[%articles.read_more]]<\\/a>\\n        [[+comments_enabled:is=`1`:then=`| <a href=\\"[[~[[+id]]]]#comments\\" class=\\"comments\\">[[%articles.comments]] ([[!QuipCount? &thread=`article-b[[+parent]]-[[+id]]`]])<\\/a>`]]\\n        | <span class=\\"date\\">[[+publishedon:strtotime:date=`%b %d, %Y`]]<\\/span>\\n      <\\/span>\\n    <\\/p>\\n<\\/div>","locked":0,"properties":null,"static":0,"static_file":"","content":"<div class=\\"post\\">\\n    <h2 class=\\"title\\"><a href=\\"[[~[[+id]]]]\\">[[+pagetitle]]<\\/a><\\/h2>\\n    <p class=\\"post-info\\">[[%articles.posted_by]] <a href=\\"[[~[[*id]]]]author\\/[[+createdby:userinfo=`username`]]\\">[[+createdby:userinfo=`username`]]<\\/a> [[+tv.articlestags:notempty=` | <span class=\\"tags\\">[[%articles.tags]]: [[!tolinks? &items=`[[+tv.articlestags]]` &target=`[[*id]]` &useTagsFurl=`1`]]<\\/span>`]]<\\/p>\\n    <div class=\\"entry\\">\\n\\t    <p>[[+introtext:default=`[[+content:ellipsis=`400`]]`]]<\\/p>\\n    <\\/div>\\n    <p class=\\"postmeta\\">\\n      <span class=\\"links\\">\\n        <a href=\\"[[~[[+id]]]]\\" class=\\"readmore\\">[[%articles.read_more]]<\\/a>\\n        [[+comments_enabled:is=`1`:then=`| <a href=\\"[[~[[+id]]]]#comments\\" class=\\"comments\\">[[%articles.comments]] ([[!QuipCount? &thread=`article-b[[+parent]]-[[+id]]`]])<\\/a>`]]\\n        | <span class=\\"date\\">[[+publishedon:strtotime:date=`%b %d, %Y`]]<\\/span>\\n      <\\/span>\\n    <\\/p>\\n<\\/div>"}',
+        'guid' => '4a4ddc80a523949b952093c6394f0dfb',
+        'native_key' => NULL,
+        'signature' => 'aceadcd8edc101607269d4254e161672',
+      ),
+      '9355575f75046d8809300020d57659ba' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"sample.ArticlesRss","description":"The tpl for the RSS feed. Duplicate this to override it.","editor_type":0,"category":0,"cache_type":0,"snippet":"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?>\\n<rss version=\\"2.0\\" xml:lang=\\"en-US\\">\\n<channel>\\n  <title>[[++site_name]]<\\/title>\\n  <link>[[~[[*id]]?scheme=`full`]]<\\/link>\\n  <description>[[*description:cdata]]<\\/description>\\n  <language>en<\\/language>\\n  <copyright>Copyright [[+year]] by [[++site_admin]]. All Rights Reserved.<\\/copyright>\\n  <ttl>120<\\/ttl>\\n  [[+content]]\\n<\\/channel>\\n<\\/rss>","locked":0,"properties":null,"static":0,"static_file":"","content":"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?>\\n<rss version=\\"2.0\\" xml:lang=\\"en-US\\">\\n<channel>\\n  <title>[[++site_name]]<\\/title>\\n  <link>[[~[[*id]]?scheme=`full`]]<\\/link>\\n  <description>[[*description:cdata]]<\\/description>\\n  <language>en<\\/language>\\n  <copyright>Copyright [[+year]] by [[++site_admin]]. All Rights Reserved.<\\/copyright>\\n  <ttl>120<\\/ttl>\\n  [[+content]]\\n<\\/channel>\\n<\\/rss>"}',
+        'guid' => '677b41ab00d33bb56e6e787b5b3f77e3',
+        'native_key' => NULL,
+        'signature' => '3f923bd30f47547d9e61ff4f83ab3d15',
+      ),
+      'eecda86bd91088ae8e4c2bc436f5c79b' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"sample.ArticlesRssItem","description":"The tpl row for each RSS feed item. Duplicate this to override it.","editor_type":0,"category":0,"cache_type":0,"snippet":"<item>\\n    <title>[[+pagetitle]]<\\/title>\\n    <link>[[~[[+id]]?scheme=`full`]]<\\/link>\\n    <description>[[+introtext:default=`[[+content:ellipsis=`400`]]`:cdata]]<\\/description>\\n    <pubDate>[[+publishedon:strtotime:date=`%a, %d %b %Y %H:%M:%S %z`]]<\\/pubDate>\\n    <guid>[[~[[+id]]?scheme=`full`]]<\\/guid>\\n    <author>[[+createdby:userinfo=`email`]] ([[+createdby:userinfo=`fullname`]])<\\/author>\\n    [[!ArticlesStringSplitter? &string=`[[+tv.articlestags]]` &tpl=`sample.ArticlesRssCategoryNode`]]\\n<\\/item>\\n","locked":0,"properties":null,"static":0,"static_file":"","content":"<item>\\n    <title>[[+pagetitle]]<\\/title>\\n    <link>[[~[[+id]]?scheme=`full`]]<\\/link>\\n    <description>[[+introtext:default=`[[+content:ellipsis=`400`]]`:cdata]]<\\/description>\\n    <pubDate>[[+publishedon:strtotime:date=`%a, %d %b %Y %H:%M:%S %z`]]<\\/pubDate>\\n    <guid>[[~[[+id]]?scheme=`full`]]<\\/guid>\\n    <author>[[+createdby:userinfo=`email`]] ([[+createdby:userinfo=`fullname`]])<\\/author>\\n    [[!ArticlesStringSplitter? &string=`[[+tv.articlestags]]` &tpl=`sample.ArticlesRssCategoryNode`]]\\n<\\/item>\\n"}',
+        'guid' => '4d915c884198fe6887456578e51f992a',
+        'native_key' => NULL,
+        'signature' => '6c80e2f2fc5c0182ea634d6d7ff472a8',
+      ),
+      '33b3f2efba56dd2eab0fd5568fada5a0' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"sample.ArchiveGroupByYear","description":"The tpl wrapper for archives when grouped by year.","editor_type":0,"category":0,"cache_type":0,"snippet":"<ul>\\n    <li><a href=\\"[[+url]]\\">[[+year]]<\\/a>\\n    <ul>\\n        [[+row]]\\n    <\\/ul>\\n    <\\/li>\\n<\\/ul>","locked":0,"properties":null,"static":0,"static_file":"","content":"<ul>\\n    <li><a href=\\"[[+url]]\\">[[+year]]<\\/a>\\n    <ul>\\n        [[+row]]\\n    <\\/ul>\\n    <\\/li>\\n<\\/ul>"}',
+        'guid' => 'df0b574d95ba4a99fa0d60e2ab5c92ca',
+        'native_key' => NULL,
+        'signature' => '6085b7f7bcb0beaa3b3966bc2c1fc3a7',
+      ),
+      '1bf6690342335e341c880cdc8c9eacc0' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"sample.ArticlesRssCategoryNode","description":"The tpl for each RSS category node for tagging.","editor_type":0,"category":0,"cache_type":0,"snippet":"<category>[[+item]]<\\/category>","locked":0,"properties":null,"static":0,"static_file":"","content":"<category>[[+item]]<\\/category>"}',
+        'guid' => '036812e41e39c3c8036894e9fe703428',
+        'native_key' => NULL,
+        'signature' => '8850e17a44982661e0d7a6f8f6e499d1',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      '26cabb2aad25dfbf8dffac978a61b0b2' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"ArticlesStringSplitter","description":"Utility snippet for Articles; splits strings by a delimiter and chunkifys the result.","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * Articles\\n *\\n * Copyright 2011-12 by Shaun McCormick <shaun+articles@modx.com>\\n *\\n * Articles is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * Articles is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * Articles; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package articles\\n *\\/\\n\\/**\\n * @var modX $modx\\n * @var array $scriptProperties\\n *\\/\\n$string = $modx->getOption(\'string\',$scriptProperties,\'\');\\n$delimiter = $modx->getOption(\'delimiter\',$scriptProperties,\',\');\\n$tpl = $modx->getOption(\'tpl\',$scriptProperties,\'articlerssitem\');\\n$outputSeparator = $modx->getOption(\'outputSeparator\',$scriptProperties,\\"\\\\n\\");\\n$outputSeparator = str_replace(\'\\\\\\\\n\',\\"\\\\n\\",$outputSeparator);\\n$toPlaceholder = $modx->getOption(\'toPlaceholder\',$scriptProperties,\'\');\\n\\n$items = explode($delimiter,$string);\\n$items = array_unique($items);\\n$list = array();\\nforeach ($items as $item) {\\n    $list[] = $modx->getChunk($tpl,array(\\n        \'item\' => $item,\\n    ));\\n}\\n\\n$output = implode($outputSeparator,$list);\\nif (!empty($toPlaceholder)) {\\n    $modx->setPlaceholder($toPlaceholder,$output);\\n    return \'\';\\n}\\nreturn $output;","locked":0,"properties":null,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Articles\\n *\\n * Copyright 2011-12 by Shaun McCormick <shaun+articles@modx.com>\\n *\\n * Articles is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * Articles is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * Articles; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package articles\\n *\\/\\n\\/**\\n * @var modX $modx\\n * @var array $scriptProperties\\n *\\/\\n$string = $modx->getOption(\'string\',$scriptProperties,\'\');\\n$delimiter = $modx->getOption(\'delimiter\',$scriptProperties,\',\');\\n$tpl = $modx->getOption(\'tpl\',$scriptProperties,\'articlerssitem\');\\n$outputSeparator = $modx->getOption(\'outputSeparator\',$scriptProperties,\\"\\\\n\\");\\n$outputSeparator = str_replace(\'\\\\\\\\n\',\\"\\\\n\\",$outputSeparator);\\n$toPlaceholder = $modx->getOption(\'toPlaceholder\',$scriptProperties,\'\');\\n\\n$items = explode($delimiter,$string);\\n$items = array_unique($items);\\n$list = array();\\nforeach ($items as $item) {\\n    $list[] = $modx->getChunk($tpl,array(\\n        \'item\' => $item,\\n    ));\\n}\\n\\n$output = implode($outputSeparator,$list);\\nif (!empty($toPlaceholder)) {\\n    $modx->setPlaceholder($toPlaceholder,$output);\\n    return \'\';\\n}\\nreturn $output;"}',
+        'guid' => '203961a28c14005950fd6eb694d371f0',
+        'native_key' => NULL,
+        'signature' => 'bf69d2a45a67df7a718a840fa96ff4eb',
+      ),
+      '016537a115e2127f3f91bce55bb908b9' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"Articles","description":"Displays Articles for a Container anywhere on your MODX site.","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * Articles\\n *\\n * Copyright 2011-12 by Shaun McCormick <shaun+articles@modx.com>\\n *\\n * Articles is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * Articles is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * Articles; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package articles\\n *\\/\\n\\/**\\n * Displays a list of posts for a container\\n *\\n * @var modX $modx\\n * @var array $scriptProperties\\n *\\n * @package articles\\n *\\/\\n$modx->lexicon->load(\'articles:frontend\');\\n\\n$container = $modx->getOption(\'container\',$scriptProperties,0);\\nif (empty($container)) return \'\';\\n\\/** @var ArticlesContainer $container *\\/\\n$container = $modx->getObject(\'ArticlesContainer\',$container);\\nif (empty($container)) return \'\';\\n\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\',$scriptProperties,\'\');\\n\\n$container->getPostListingCall($placeholderPrefix);\\n$container->getArchivistCall($placeholderPrefix);\\n$container->getTagListerCall($placeholderPrefix);\\n$container->getLatestPostsCall($placeholderPrefix);\\n$settings = $container->getContainerSettings();\\nif ($modx->getOption(\'commentsEnabled\',$settings,true)) {\\n    $container->getLatestCommentsCall($placeholderPrefix);\\n    $modx->setPlaceholder($placeholderPrefix.\'comments_enabled\',1);\\n} else {\\n    $modx->setPlaceholder($placeholderPrefix.\'comments_enabled\',0);\\n}\\nreturn \'\';","locked":0,"properties":null,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Articles\\n *\\n * Copyright 2011-12 by Shaun McCormick <shaun+articles@modx.com>\\n *\\n * Articles is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * Articles is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * Articles; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package articles\\n *\\/\\n\\/**\\n * Displays a list of posts for a container\\n *\\n * @var modX $modx\\n * @var array $scriptProperties\\n *\\n * @package articles\\n *\\/\\n$modx->lexicon->load(\'articles:frontend\');\\n\\n$container = $modx->getOption(\'container\',$scriptProperties,0);\\nif (empty($container)) return \'\';\\n\\/** @var ArticlesContainer $container *\\/\\n$container = $modx->getObject(\'ArticlesContainer\',$container);\\nif (empty($container)) return \'\';\\n\\n$placeholderPrefix = $modx->getOption(\'placeholderPrefix\',$scriptProperties,\'\');\\n\\n$container->getPostListingCall($placeholderPrefix);\\n$container->getArchivistCall($placeholderPrefix);\\n$container->getTagListerCall($placeholderPrefix);\\n$container->getLatestPostsCall($placeholderPrefix);\\n$settings = $container->getContainerSettings();\\nif ($modx->getOption(\'commentsEnabled\',$settings,true)) {\\n    $container->getLatestCommentsCall($placeholderPrefix);\\n    $modx->setPlaceholder($placeholderPrefix.\'comments_enabled\',1);\\n} else {\\n    $modx->setPlaceholder($placeholderPrefix.\'comments_enabled\',0);\\n}\\nreturn \'\';"}',
+        'guid' => '15198fa55a4d290ad1eb7efaed7b5a5c',
+        'native_key' => NULL,
+        'signature' => '01e37db732d8e59b63a71fc9f1ba3f12',
+      ),
+    ),
+    'Templates' => 
+    array (
+      'a8ea999b8fe95e543c09eb75978454a0' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'templatename',
+        'class' => 'modTemplate',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"templatename":"sample.ArticlesContainerTemplate","description":"The default Template for the Articles Container. Duplicate this to override it.","editor_type":0,"category":0,"icon":"","template_type":0,"content":"<!DOCTYPE html PUBLIC \\"-\\/\\/W3C\\/\\/DTD XHTML 1.0 Strict\\/\\/EN\\" \\"http:\\/\\/www.w3.org\\/TR\\/xhtml1\\/DTD\\/xhtml1-strict.dtd\\">\\n<html xmlns=\\"http:\\/\\/www.w3.org\\/1999\\/xhtml\\" xml:lang=\\"en\\" lang=\\"en\\">\\n<head>\\n<title>Articles - [[*pagetitle]]<\\/title>\\n<meta charset=\\"utf-8\\">\\n<meta http-equiv=\\"X-UA-Compatible\\" content=\\"IE=edge,chrome=1\\">\\n<link rel=\\"stylesheet\\" type=\\"text\\/css\\" href=\\"[[++articles.assets_url:default=`[[++base_url]]assets\\/components\\/articles\\/`]]themes\\/default\\/style.css\\" \\/>\\n<base href=\\"[[++site_url]]\\" \\/>\\n<\\/head>\\n<body>\\n\\n<div id=\\"header-wrap\\">\\n  <div id=\\"header\\" class=\\"container_16\\">\\n    <h1 id=\\"logo-text\\"><a href=\\"[[~[[*id]]]]\\" title=\\"\\">Articles<\\/a><\\/h1>\\n    <p id=\\"intro\\">Articles By Me<\\/p>\\n    <!-- navigation -->\\n    <div id=\\"nav\\">\\n      <ul><li class=\\"first\\"><a href=\\"[[~[[*id]]]]\\" title=\\"Home\\" >Home<\\/a><\\/li><\\/ul>\\n    <\\/div>\\n    <div id=\\"header-image\\"><\\/div>\\n      <div id=\\"search\\">\\n\\n<form id=\\"quick-search\\" action=\\"search-results.html\\" method=\\"get\\">\\n<p>\\n  <label for=\\"qsearch\\">Search:<\\/label>\\n  <input class=\\"tbox\\" id=\\"qsearch\\" type=\\"text\\" name=\\"search\\" value=\\"\\" title=\\"Start typing and hit ENTER\\" \\/>\\n  <input class=\\"btn\\" alt=\\"Search\\" type=\\"image\\" title=\\"Search\\" src=\\"[[++articles.assets_url:default=`assets\\/components\\/articles\\/`]]themes\\/default\\/images\\/search.gif\\" \\/>\\n<\\/p>\\n<\\/form>\\n<\\/div>\\n      \\n      <!-- header ends here -->\\n  <\\/div>\\n<\\/div>\\n<!-- content starts -->\\n<div id=\\"content-outer\\"><div id=\\"content-wrapper\\" class=\\"container_16\\">\\n\\n<!-- main -->\\n<div id=\\"main\\" class=\\"grid_12\\">\\n[[*content]]\\n<\\/div>\\n\\n<!-- main ends -->\\n\\n\\n<div id=\\"left-columns\\" class=\\"grid_4\\">\\n  <div class=\\"grid_4 alpha\\">\\n\\n<div class=\\"sidemenu\\">\\n  <h3>Latest Posts<\\/h3>\\n  <ul>\\n  [[+latest_posts]]\\n  <\\/ul>\\n<\\/div>\\n\\n[[+comments_enabled:is=`1`:then=`\\n<div class=\\"sidemenu\\">\\n  <h3>Latest Comments<\\/h3>\\n  <ul>\\n  [[+latest_comments]]\\n  <\\/ul>\\n<\\/div>\\n`]]\\n\\n\\n  <\\/div>\\n  <!-- end left-columns -->\\n<\\/div>\\n<!-- contents end here -->\\n\\n<\\/div><\\/div>\\n\\n<!-- footer starts here -->\\n<div id=\\"footer-wrapper\\" class=\\"container_12\\">\\n\\n  <div id=\\"footer-content\\">\\n    <div class=\\"grid_4\\">\\n<h3>Tags<\\/h3>\\n[[+tags]]\\n    <\\/div>\\n    <div class=\\"grid_4\\">\\n  <h3>Archives<\\/h3>\\n  [[+archives]]\\n    <\\/div>\\n  <\\/div>\\n  <div id=\\"footer-bottom\\">\\n   <p class=\\"bottom-left\\">\\n&nbsp; &copy; 2010-2012 Articles. all rights reserved.\\n      &nbsp; &nbsp; powered by <a href=\\"http:\\/\\/modx.com\\/\\">modx revolution<\\/a>\\n      &nbsp; &nbsp; <a href=\\"http:\\/\\/www.bluewebtemplates.com\\/\\" title=\\"Website Templates\\">website templates<\\/a> by <a href=\\"http:\\/\\/www.styleshout.com\\/\\">styleshout<\\/a>\\n      <\\/p>\\n\\n      <p class=\\"bottom-right\\" >\\n        <a href=\\"[[~1]]\\">Home<\\/a> |\\n        <a href=\\"[[~1]]\\">Sitemap<\\/a> |\\n        <a href=\\"http:\\/\\/jigsaw.w3.org\\/css-validator\\/check\\/referer\\">CSS<\\/a> |\\n             <a href=\\"http:\\/\\/validator.w3.org\\/check\\/referer\\">XHTML<\\/a>\\n      <\\/p>\\n\\n  <\\/div>\\n<\\/div>\\n\\n<\\/body>\\n<\\/html>","locked":0,"properties":null,"static":0,"static_file":""}',
+        'guid' => '6df403df854f59fabad16ec173f7e68a',
+        'native_key' => NULL,
+        'signature' => '437b01ff5df2119dcd45f9546683e71a',
+      ),
+      'd9cc0664baf4ee29e4c2650f5e34bc78' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'templatename',
+        'class' => 'modTemplate',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"templatename":"sample.ArticleTemplate","description":"The default Template for an Article. Duplicate this to override it.","editor_type":0,"category":0,"icon":"","template_type":0,"content":"<!DOCTYPE html PUBLIC \\"-\\/\\/W3C\\/\\/DTD XHTML 1.0 Strict\\/\\/EN\\" \\"http:\\/\\/www.w3.org\\/TR\\/xhtml1\\/DTD\\/xhtml1-strict.dtd\\">\\n<html xmlns=\\"http:\\/\\/www.w3.org\\/1999\\/xhtml\\" xml:lang=\\"en\\" lang=\\"en\\">\\n<head>\\n<title>Articles - [[*pagetitle]]<\\/title>\\n<meta charset=\\"utf-8\\">\\n<meta http-equiv=\\"X-UA-Compatible\\" content=\\"IE=edge,chrome=1\\">\\n<link rel=\\"stylesheet\\" type=\\"text\\/css\\" href=\\"[[++articles.assets_url:default=`[[++base_url]]assets\\/components\\/articles\\/`]]themes\\/default\\/style.css\\" \\/>\\n<base href=\\"[[++site_url]]\\" \\/>\\n<\\/head>\\n<body>\\n\\n<div id=\\"header-wrap\\">\\n  <div id=\\"header\\" class=\\"container_16\\">\\n    <h1 id=\\"logo-text\\"><a href=\\"[[~[[*parent]]]]\\" title=\\"\\">Articles<\\/a><\\/h1>\\n    <p id=\\"intro\\">Articles By Me<\\/p>\\n    <!-- navigation -->\\n    <div id=\\"nav\\">\\n      <ul><li class=\\"first\\"><a href=\\"[[~[[*id]]]]\\" title=\\"Home\\" >Home<\\/a><\\/li>\\n    <\\/div>\\n    <div id=\\"header-image\\"><\\/div>\\n      <div id=\\"search\\">\\n\\n<form id=\\"quick-search\\" action=\\"search-results.html\\" method=\\"get\\">\\n<p>\\n  <label for=\\"qsearch\\">Search:<\\/label>\\n  <input class=\\"tbox\\" id=\\"qsearch\\" type=\\"text\\" name=\\"search\\" value=\\"\\" title=\\"Start typing and hit ENTER\\" \\/>\\n  <input class=\\"btn\\" alt=\\"Search\\" type=\\"image\\" title=\\"Search\\" src=\\"[[++articles.assets_url:default=`assets\\/components\\/articles\\/`]]themes\\/default\\/images\\/search.gif\\" \\/>\\n<\\/p>\\n<\\/form>\\n<\\/div>\\n      <!-- header ends here -->\\n  <\\/div>\\n<\\/div>\\n<!-- content starts -->\\n<div id=\\"content-outer\\"><div id=\\"content-wrapper\\" class=\\"container_16\\">\\n\\n<!-- main -->\\n<div id=\\"main\\" class=\\"grid_12\\">\\n    <h2 class=\\"title\\"><a href=\\"[[~[[*id]]]]\\">[[*pagetitle]]<\\/a><\\/h2>\\n    <p class=\\"post-info\\">\\n        <span class=\\"left\\">Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] by <a href=\\"[[~[[*parent]]]]author\\/[[*publishedby:userinfo=`username`]]\\">[[*publishedby:userinfo=`username`]]<\\/a><\\/span>\\n[[*articlestags:notempty=`\\n        <span class=\\"tags left\\">&nbsp;| Tags: [[+article_tags]]<\\/span>\\n`]]\\n        [[+comments_enabled:is=`1`:then=`&nbsp;| <a href=\\"[[~[[*id]]]]#comments\\" class=\\"comments\\">Comments ([[+comments_count]])<\\/a>`]]\\n    <\\/p>\\n    <div class=\\"entry\\">\\n        <p>[[*introtext]]<\\/p>\\n        <hr \\/>\\n        [[*content]]\\n    <\\/div>\\n\\n    <hr \\/>\\n\\n    <div class=\\"post-comments\\" id=\\"comments\\">\\n        [[+comments]]\\n        <br \\/>\\n        <h3>Add a Comment<\\/h3>\\n        [[+comments_form]]\\n    <\\/div>\\n<\\/div>\\n\\n<div id=\\"left-columns\\" class=\\"grid_4\\">\\n  <div class=\\"grid_4 alpha\\">\\n\\n    <div class=\\"sidemenu\\">\\n      <h3>Latest Posts<\\/h3>\\n      <ul>\\n      [[+latest_posts]]\\n      <\\/ul>\\n    <\\/div>\\n\\n    [[+comments_enabled:is=`1`:then=`\\n    <div class=\\"sidemenu\\">\\n      <h3>Latest Comments<\\/h3>\\n      <ul>\\n      [[+latest_comments]]\\n      <\\/ul>\\n    <\\/div>\\n    `]]\\n  <\\/div>\\n  <!-- end left-columns -->\\n<\\/div>\\n<!-- contents end here -->\\n\\n\\n<\\/div><\\/div>\\n\\n<!-- footer starts here -->\\n<div id=\\"footer-wrapper\\" class=\\"container_12\\">\\n\\n  <div id=\\"footer-content\\">\\n    <div class=\\"grid_4\\">\\n<h3>Tags<\\/h3>\\n[[+tags]]\\n    <\\/div>\\n    <div class=\\"grid_4\\">\\n  <h3>Archives<\\/h3>\\n  [[+archives]]\\n    <\\/div>\\n  <\\/div>\\n  <div id=\\"footer-bottom\\">\\n   <p class=\\"bottom-left\\">\\n&nbsp; &copy; 2010-2012 Articles. all rights reserved.\\n      &nbsp; &nbsp; powered by <a href=\\"http:\\/\\/modx.com\\/\\">modx revolution<\\/a>\\n      &nbsp; &nbsp; <a href=\\"http:\\/\\/www.bluewebtemplates.com\\/\\" title=\\"Website Templates\\">website templates<\\/a> by <a href=\\"http:\\/\\/www.styleshout.com\\/\\">styleshout<\\/a>\\n      <\\/p>\\n\\n      <p class=\\"bottom-right\\" >\\n        <a href=\\"[[~1]]\\">Home<\\/a> |\\n        <a href=\\"[[~1]]\\">Sitemap<\\/a> |\\n        <a href=\\"http:\\/\\/jigsaw.w3.org\\/css-validator\\/check\\/referer\\">CSS<\\/a> |\\n             <a href=\\"http:\\/\\/validator.w3.org\\/check\\/referer\\">XHTML<\\/a>\\n      <\\/p>\\n\\n  <\\/div>\\n<\\/div>\\n\\n<\\/body>\\n<\\/html>","locked":0,"properties":null,"static":0,"static_file":""}',
+        'guid' => '2ca8a521df750f79b8ad90996158415c',
+        'native_key' => NULL,
+        'signature' => '3fad99ac731b47fb4aef75f14dc8e040',
+      ),
+    ),
+    'TemplateVars' => 
+    array (
+      '1f0080ce5fa7d913405b3c1e24df40e2' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modTemplateVar',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"type":"hidden","name":"articlestags","caption":"articlestags","description":"The default tags TV for Articles. Do not delete!","editor_type":0,"category":0,"locked":0,"elements":null,"rank":0,"display":"","default_text":null,"properties":null,"input_properties":null,"output_properties":null,"static":0,"static_file":"","content":null}',
+        'guid' => '87607eb2decbb5e3bd5f884834f551e5',
+        'native_key' => NULL,
+        'signature' => '151dffa2ed0b6f94418df39dc4539c3d',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'articles',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"articles-1.7.11-pl\\/modCategory\\/14e4dec8f7fa2803c83b7f7266025282\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"articles"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"articles-1.7.11-pl\\/modCategory\\/14e4dec8f7fa2803c83b7f7266025282\\/1\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"articles"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.11-pl\\/modCategory\\/14e4dec8f7fa2803c83b7f7266025282.extpack.resolver.resolver","type":"php","name":"extpack.resolver"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.11-pl\\/modCategory\\/14e4dec8f7fa2803c83b7f7266025282.tvs.resolver.resolver","type":"php","name":"tvs.resolver"}',
+    ),
+    4 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.11-pl\\/modCategory\\/14e4dec8f7fa2803c83b7f7266025282.dbfields.resolver.resolver","type":"php","name":"dbfields.resolver"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'a680fc8251b3ddc86c1bff36519b6914',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '14e4dec8f7fa2803c83b7f7266025282',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"Articles"}',
+);

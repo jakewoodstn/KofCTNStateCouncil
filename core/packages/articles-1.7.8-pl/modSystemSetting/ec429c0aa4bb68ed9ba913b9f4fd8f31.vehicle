@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'articles',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '36e425844fcac7fafa481e71ac30317c',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'ec429c0aa4bb68ed9ba913b9f4fd8f31',
+  'native_key' => 'articles.mgr_time_format',
+  'object' => '{"key":"articles.mgr_time_format","value":"%H:%I %p","xtype":"textfield","namespace":"articles","area":"site","editedon":null}',
+);

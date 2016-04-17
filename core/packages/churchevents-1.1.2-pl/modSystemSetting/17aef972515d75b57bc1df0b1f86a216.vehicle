@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'churchevents',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '23e94385710f59e86e88e17b7e7c5111',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '17aef972515d75b57bc1df0b1f86a216',
+  'native_key' => 'churchevents.dateFormat',
+  'object' => '{"key":"churchevents.dateFormat","value":"%m\\/%d\\/%Y","xtype":"textfield","namespace":"churchevents","area":"Date & Time","editedon":null}',
+);

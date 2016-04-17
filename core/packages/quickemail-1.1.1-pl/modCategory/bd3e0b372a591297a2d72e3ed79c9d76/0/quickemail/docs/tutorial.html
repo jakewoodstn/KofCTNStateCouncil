@@ -1,0 +1,110 @@
+<p>
+This snippet is for use with MODX Revolution. QuickEmail can be used to send email from inside another snippet, but its primary use is to see if your email is working, and if not, to help diagnose and solve email problems.
+</p>
+<h3>Installing QuickEmail for MODX Revolution</h3>
+<p>
+Go to System | Package Management on the main menu in the MODX Manager and click on the "Download Extras" button. That will take you to the Revolution Repository (AKA Web Transport Facility). Put QuickEmail in the search box and press Enter. Click on the "Download" button, and when it changes to "Downloaded," click on the "Finish" button. That should bring you back to your Package Management grid. Right click on QuickEmail and select "Install Package." The QuickEmail snippet should now be installed.</p>
+
+<h3>Using QuickEmail</h3>
+<p>
+This couldn't be much simpler. Create a document in the Manager and put the following code in the Resource Content field:
+</p>
+<pre><fixedpre>
+[[!QuickEmail]]
+</fixedpre></pre>
+
+
+<p>
+When you preview the document, you should receive an email at the address you specified when you installed MODX. You can go to System | System Settings the top menu and put emailsender
+ in the search filter to check that address. If you don't receive an email, Change the snippet tag to look like this:
+</p>
+
+<pre><fixedpre>
+[[!QuickEmail? &debug=`1`]]
+</fixedpre></pre>
+</p>
+<p>
+Try previewing the document again and look for an error message near the bottom of the screen.
+</p>
+
+<p>
+<h3>Diagnosing Email Problems</h3>
+<p>If you see a message that says, "Could not instantiate mail function," it usually means that either your host has the mail() function turned off (many do) or that you 
+are using a localhost install and there is no working mail server. In that case, one option is to use the MODX SMTP Systems Settings so that MODX will send the mail from an
+SMTP server (e.g., Gmail) where you have an account.</p>
+
+<p>Go to System | System Settings and type SMTP in the search filter, then click on the grid. Set the SMTP settings to the appropriate values for your SMTP account. The following settings will work for Gmail:</p>
+
+<pre><fixedpre>
+SMTP Authentication: Yes
+SMTP Connection Prefix: tls
+SMTP Hosts: smtp.gmail.com
+SMTP Password: yourGmailPassword
+SMTP Port: 465
+SMTP User: yourGmailUsername
+Use SMTP: Yes
+</fixedpre></pre>
+
+<p>Note that Gmail will change all the email from addresses to match your Gmail account and any settings you use in the tag will be ignored. You can have a separate account in Gmail for sending email from your site if you wish.</p>
+
+<p>
+Once you have set the SMTP settings, try previewing your page again. If there are SMTP errors, you will see a detailed account of the Server interaction. Look for any errors and correct the SMTP settings accordingly. A timeout usually means a problem with the port number or failure to set the SMTP prefix. Failure to connect to the host, usually means the SMTP hosts is incorrect or the SMTP prefix is not set correctly. If you've forgotten to set the SMTP authentication, it will remind you. If there is a problem with authentication, either the SMTP username or the SMTP password are incorrect &mdash; there's no way to tell which one is the problem.
+</p>
+
+<h3>Sending Email From Inside Another Snippet</h3>
+<p>
+You can use the following code to send email from inside another snippet, although it is just as easy to use the MODX mailer. The MODX mailer is also more efficient,
+because QuickEmail will do a bunch of processing and then call the MODX mailer. Don't try any of the code below until you've made sure your mail system is working using the method described above.
+</p>
+<pre><fixedpre>
+$props = array(
+    'debug' => '0',
+    'hideOutput' =&gt; '0',
+    'message' =&gt; 'Some Message',
+    'subject' =&gt; 'Some Subject',
+    'to' =&gt; 'someone@somewhere.com',
+    'fromName' =&gt; 'Some Name',
+    'emailSender' =&gt; 'someone@somewhere.com',
+    'replyTo' =&gt; 'someone@somewhere.com',
+    'html' =&gt; '1',
+    'failureMessage' =&gt; '&lt;br /&gt;&lt;h3 style=&quot;color:red&quot;&gt;Mail Failed&lt;/h3&gt;',
+    'successMessage' =&gt; '&lt;br /&gt;&lt;h3 style =&quot;color:green&quot;&gt;Mail reported successful&lt;/h3&gt;',
+    'errorHeader' =&gt; '&lt;br /&gt;Mail error:',
+    'smtpErrorHeader' =&gt; '&lt;br /&gt;SMTP server report:',
+);
+
+$output =  $modx->runSnippet('QuickEmail',$props);
+return $output;
+</fixedpre></pre>
+<p>
+Once you have things working, you may want to set 'hideOutput' to '1'. As an alternative, you can modify the $output 
+variable before returning it. If 'hideOutput' is set to '1', there will be no visible output at all from the snippet &mdash; it will just 
+send the email. 
+</p>
+<p>
+All of the properties are optional and have reasonable defaults so try
+ just setting 'message', 'subject', and 'to', and see what you get.
+</p>
+
+<h3>Using The MODX Mailer to send email</h3>
+<p>Since I mentioned it above, here is how you send email using the MODX built-in email function:</p>
+<pre><fixedpre>
+$modx->getService('mail', 'mail.modPHPMailer');
+$modx->mail->set(modMail::MAIL_BODY, 'Some message');
+$modx->mail->set(modMail::MAIL_FROM, 'someone@somewhere.com');
+$modx->mail->set(modMail::MAIL_FROM_NAME, 'Your Name');
+$modx->mail->set(modMail::MAIL_SENDER, 'you@yourdomain.com');
+$modx->mail->set(modMail::MAIL_SUBJECT, 'Some Subject');
+$modx->mail->address('to', 'somone@somewhere.com', 'UserName');
+$modx->mail->address('reply-to', 'you@yourdomain.com');
+$modx->mail->setHTML(true);
+$sent = $modx->mail->send();
+if ($sent) {
+    $output = 'Mail Sent';
+} else {
+    $output = 'Mail Not Sent';
+}
+return $output;
+</fixedpre></pre>
+
+<p>&nbsp;</p>

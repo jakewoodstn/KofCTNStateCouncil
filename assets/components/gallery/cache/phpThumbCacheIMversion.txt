@@ -1,0 +1,4 @@
+6.7.9-10 2012-10-05 Q16 
+Version: ImageMagick 6.7.9-10 2012-10-05 Q16 http://www.imagemagick.org
+Copyright: Copyright (C) 1999-2012 ImageMagick Studio LLC
+Features: OpenMP

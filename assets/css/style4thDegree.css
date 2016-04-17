@@ -1,0 +1,63 @@
+
+
+#container {
+height:99.9%;
+min-height:100%;
+text-align:left;
+position:relative;
+overflow:visible;
+margin:auto;
+}
+
+.clearing {
+clear:both;
+height:0;
+}
+
+#banner {
+height:175px;
+background:url(../images/KCTN4_trans.png) no-repeat center center;
+background-size:80%;
+}
+
+#wrapper {
+position:relative;
+border:1px solid #FFF;
+margin:0 auto;
+}
+
+#header {
+width:99%;
+margin:0 .5%;
+}
+
+
+#hr {
+
+border:0;
+height:1px;
+background:#000;	
+background-image: -webkit-linear-gradient(left, #FFF, #000, #FFF);
+background-image: -moz-linear-gradient(left, #FFF, #000, #FFF);
+background-image: -ms-linear-gradient(left, #FFF, #000, #FFF);
+background-image: -o-linear-gradient(left, #FFF, #000, #FFF);
+margin-bottom:20px;
+}
+
+#exemplifications{clear:both;margin-top:10px;padding-top:10px;}
+
+#exemplifications h2.title {
+	font: normal 2.2em Georgia, 'Times New Roman', Times, Serif;
+	color: #444;
+	letter-spacing: -2.2px;
+	margin-left: 5px;
+	margin-right: 15px;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+#exemplifications table{width:98%;padding-left:2%}
+#exemplifications tr.headerRow td{border-bottom-color:#000;border-bottom-style:solid;border-bottom-width:1px;}
+#exemplifications td.centered{text-align:center;}
+#exemplifications td{height:30px;}

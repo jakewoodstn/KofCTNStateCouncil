@@ -1,0 +1,32 @@
+<?php return array (
+  'class' => 'xPDOTransportVehicle',
+  'object' => 
+  array (
+    'source' => 'articles-1.7.8-pl/xPDOTransportVehicle/e25f9b02eccf88f857f7c15d54417b01/',
+    'target' => 'return MODX_CORE_PATH . \'packages/\';',
+    'name' => 'quip-2.3.3-pl.transport.zip',
+  ),
+  'vehicle_class' => 'xPDOTransportVehicle',
+  'namespace' => 'articles',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.8-pl\\/xPDOTransportVehicle\\/e25f9b02eccf88f857f7c15d54417b01.resolve.quip.resolver","type":"php","name":"resolve.quip"}',
+    ),
+  ),
+  'validate' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"articles-1.7.8-pl\\/xPDOTransportVehicle\\/e25f9b02eccf88f857f7c15d54417b01.validate.quip.validator","type":"php","name":"validate.quip"}',
+    ),
+  ),
+  'vehicle_package' => 'transport',
+  'guid' => '1db1f4b2265d5645d669f6b426ff6e1b',
+  'package' => '',
+  'signature' => 'e25f9b02eccf88f857f7c15d54417b01',
+  'native_key' => '1db1f4b2265d5645d669f6b426ff6e1b',
+);

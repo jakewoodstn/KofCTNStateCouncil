@@ -1,0 +1,21 @@
+
+#sidebarlogin label {
+display: block;
+margin-top: 5px !important;
+}
+
+#sidebarlogin input {
+	width: 100%;
+}
+#sidebarlogin #checkbox_1 {	width: auto; float: right; border: 0 !important;}
+#sidebarlogin h3 {
+display: none;
+}
+.button {width: auto !important; height: auto !important; padding: 2px !important; margin-top: 5px !important; margin-bottom: 5px !important;}
+
+#sidebarlogin #forgotpsswd {
+	font-size: 80%;
+	display: block;
+	float: right;
+	margin: 10px 0 0 1px;
+}

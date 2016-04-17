@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'churchevents',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'b20b281ed3a9b60fa255c9605ad9eb6f',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '1bdf61650f860ffc9530b40626e0ff74',
+  'native_key' => 'churchevents.useLocations',
+  'object' => '{"key":"churchevents.useLocations","value":"1","xtype":"combo-boolean","namespace":"churchevents","area":"Location Management","editedon":null}',
+);

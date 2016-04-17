@@ -1,0 +1,111 @@
+<?php return array (
+  'unique_key' => 'name',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'PluginEvents' => 
+    array (
+      '2fe4698ab606b7cd8d186a1b1eee4e22' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnPageNotFound","priority":0,"propertyset":0}',
+        'guid' => 'e48f3925c3553e36ab8520ac32fb9fa0',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnPageNotFound',
+        ),
+        'signature' => '260c6b7e3bccaee4674ba896cc008bef',
+      ),
+      '543714c7857633a9a43f2a7dfedb3d22' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnManagerPageInit","priority":0,"propertyset":0}',
+        'guid' => 'e48c65761cc73886dee9e6df6b723b5a',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnManagerPageInit',
+        ),
+        'signature' => '1201522d0a73b469d1ceceecfb237821',
+      ),
+      '94043ad4f2b039c87ada9e6c85d6c577' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnDocPublished","priority":0,"propertyset":0}',
+        'guid' => '670954bb9d545d323bc7ed85b88c25cc',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnDocPublished',
+        ),
+        'signature' => '48925a562185eaff1159706a1f208a7c',
+      ),
+      '6e974914ed7c0f3a6e5b2ff78d0aa221' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnDocUnPublished","priority":0,"propertyset":0}',
+        'guid' => '407be2344895c3669115ecf4518e7c22',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnDocUnPublished',
+        ),
+        'signature' => '78a062dbfbe4c757a9db328f7823124b',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'articles',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'e0bd53ceb6d3ff84bb6734248a91424c',
+  'package' => 'modx',
+  'class' => 'modPlugin',
+  'signature' => 'd3f25dd8e17cbf3d85078efc97f7849d',
+  'native_key' => 1,
+  'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"ArticlesPlugin","description":"Handles FURLs for Articles.","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * Articles\\n *\\n * Copyright 2011-12 by Shaun McCormick <shaun+articles@modx.com>\\n *\\n * Articles is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * Articles is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * Articles; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package articles\\n *\\/\\n\\/**\\n * @var modX $modx\\n * @var array $scriptProperties\\n *\\/\\nswitch ($modx->event->name) {\\n    case \'OnManagerPageInit\':\\n        $cssFile = $modx->getOption(\'articles.assets_url\',null,$modx->getOption(\'assets_url\').\'components\\/articles\\/\').\'css\\/mgr.css\';\\n        $modx->regClientCSS($cssFile);\\n        break;\\n    case \'OnPageNotFound\':\\n        $corePath = $modx->getOption(\'articles.core_path\',null,$modx->getOption(\'core_path\').\'components\\/articles\\/\');\\n        require_once $corePath.\'model\\/articles\\/articlesrouter.class.php\';\\n        $router = new ArticlesRouter($modx);\\n        $router->route();\\n        return;\\n    case \'OnDocPublished\':\\n        \\/** @var Article $resource *\\/\\n        $resource =& $scriptProperties[\'resource\'];\\n        if ($resource instanceof Article) {\\n            $resource->setArchiveUri();\\n            $resource->save();\\n            $modx->cacheManager->refresh(array(\\n                \'db\' => array(),\\n                \'auto_publish\' => array(\'contexts\' => array($resource->get(\'context_key\'))),\\n                \'context_settings\' => array(\'contexts\' => array($resource->get(\'context_key\'))),\\n                \'resource\' => array(\'contexts\' => array($resource->get(\'context_key\'))),\\n            ));\\n            $resource->notifyUpdateServices();\\n            $resource->sendNotifications();\\n        }\\n        break;\\n    case \'OnDocUnPublished\':\\n        $resource =& $scriptProperties[\'resource\'];\\n        break;\\n\\n}\\nreturn;","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Articles\\n *\\n * Copyright 2011-12 by Shaun McCormick <shaun+articles@modx.com>\\n *\\n * Articles is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * Articles is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * Articles; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package articles\\n *\\/\\n\\/**\\n * @var modX $modx\\n * @var array $scriptProperties\\n *\\/\\nswitch ($modx->event->name) {\\n    case \'OnManagerPageInit\':\\n        $cssFile = $modx->getOption(\'articles.assets_url\',null,$modx->getOption(\'assets_url\').\'components\\/articles\\/\').\'css\\/mgr.css\';\\n        $modx->regClientCSS($cssFile);\\n        break;\\n    case \'OnPageNotFound\':\\n        $corePath = $modx->getOption(\'articles.core_path\',null,$modx->getOption(\'core_path\').\'components\\/articles\\/\');\\n        require_once $corePath.\'model\\/articles\\/articlesrouter.class.php\';\\n        $router = new ArticlesRouter($modx);\\n        $router->route();\\n        return;\\n    case \'OnDocPublished\':\\n        \\/** @var Article $resource *\\/\\n        $resource =& $scriptProperties[\'resource\'];\\n        if ($resource instanceof Article) {\\n            $resource->setArchiveUri();\\n            $resource->save();\\n            $modx->cacheManager->refresh(array(\\n                \'db\' => array(),\\n                \'auto_publish\' => array(\'contexts\' => array($resource->get(\'context_key\'))),\\n                \'context_settings\' => array(\'contexts\' => array($resource->get(\'context_key\'))),\\n                \'resource\' => array(\'contexts\' => array($resource->get(\'context_key\'))),\\n            ));\\n            $resource->notifyUpdateServices();\\n            $resource->sendNotifications();\\n        }\\n        break;\\n    case \'OnDocUnPublished\':\\n        $resource =& $scriptProperties[\'resource\'];\\n        break;\\n\\n}\\nreturn;"}',
+);

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'articles',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '0b675fad750826822a3faa360331dedd',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '73fa48a0c383fd81b48c83209be348d2',
+  'native_key' => 'articles.container_ids',
+  'object' => '{"key":"articles.container_ids","value":"","xtype":"textfield","namespace":"articles","area":"furls","editedon":null}',
+);

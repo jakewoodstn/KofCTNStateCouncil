@@ -1,0 +1,352 @@
+<!--
+***************************************************************
+
+http://chakrabarty.com/pp_editable_dropdown.html
+http://chakrabarty.com/combobox.html
+
+***************************************************************
+
+Hi,
+
+I have written a set of javascript functions for an "Editable Dropdown (/Listbox/Combobox)"...
+
+
+FEATURES:
+
+1.Any one of the dropdown options can be made Editable (for example either the first or last option can be made editable).
+
+2.Rest of the options are read-only (as in a normal dropdown).
+
+3.Press [ <- ] and [ -> ] arrow keys on the keyboard to change alignment/flow.
+  ...go to Start : Press  [ <- ] Arrow Key
+  ...go to End : Press [ -> ] Arrow Key
+  (In Internet Explorer: this is useful when the edited-text content exceeds the fixed-width of the dropdown. This is Not useful in NetscapeFirefoxChrome)
+
+4.Editable Option: Press "BackSpace" to remove the last typed character .
+
+5.Editable Option: Press "Delete" to remove all typed characters .
+
+6.The Editable Dropdown can be customized to the following formats:
+
+    --------------------------------------------
+    (a)   Left Aligned,
+          VARIABLE WIDTH,
+          Left To Right Flow
+    --------------------------------------------
+    (b)   Left Aligned,
+          FIXED WIDTH,
+          Left To Right Flow
+    --------------------------------------------
+    (c)   RIGHT Aligned,
+          Variable Width,
+          RIGHT TO LEFT FLOW
+          (Content flows right to left)
+    --------------------------------------------
+    (d)   RIGHT Aligned,
+          FIXED Width,
+          RIGHT TO LEFT FLOW
+          (Content flows right to left)
+    --------------------------------------------
+
+7.Does not tolerate the "Backspace" bug or "automatic Jump" bug (explained in next section).
+
+8.The characters to be allowed/disallowed in Editable Option can be customized.
+       This can be done by using statements such as:
+
+                   if(vEventKeyCode == ascii#_of_character) then ...
+
+       You just need to know the keycode/ASCII value of the character you want
+       to allow/disallow.
+
+9.Overcomes all the bugs I have come across in other logic/codes for Editable dropdowns.
+
+It works beautifully !!!
+
+----------------------------------------------------------------------
+
+
+NO BUGS:
+This code does NOT have the following bugs that are commonly associated with Editable Dropdown codes :
+
+1. "Backspace" bug :
+    A "Backspace" keypress in the dropdown works like a BACK button on the Browser !!
+    (...hence editing is hampered )
+
+2. The "automatic Jump" bug:
+   If a alphabet is entered (while editing)
+   ... which is a first character in one of the other read-only options
+   ... then the focus automatically "jumps" to that read-only option
+   (* this is a common property of normal dropdowns
+    ..but..is undesirable while editing).
+
+3. CAPS bug :
+   Values Entered are always displayed in CAPS ....lower case not possible.
+
+4. Javascript error: For example, when dropdown is empty and a key is pressed.
+
+5. Limited Characters Bug: Some codes do not allow certain characters.
+   But in this code, you decide the characters to be allowed (see point 8 above).
+
+The new set of functions I have written do not have the above bugs.
+
+Hope you will find this code useful.
+
+
+Best regards,
+
+Author (source: http://chakrabarty.com/pp_editable_dropdown.html )
+
+-->
+
+<!--
+***************************************************************
+
+TWO STEPS TO INSTALL EDITABLE DROP DOWN - source: http://chakrabarty.com/pp_editable_dropdown.html.:
+
+1.  Copy the first part of the coding (javascript) into the HEAD of your HTML document
+
+2.  Add the last part of code (HTML) into the BODY of your HTML document
+
+
+STEPS TO MANIPULATE/OPERATE EDITABLE DROP DOWN - source: http://chakrabarty.com/pp_editable_dropdown.html.:
+
+1. IMPORTANT: Deciding which option is "Editable"...
+
+  Two Global Variables required to be SET by programmer:
+
+  var vEditableOptionIndex...;
+
+    Give Index of Editable option in the dropdown.
+    For eg.
+     if first option is editable then vEditableOptionIndex = 0;
+     if second option is editable then vEditableOptionIndex = 1;
+     if third option is editable then vEditableOptionIndex = 2;
+     if last option is editable then vEditableOptionIndex = (length of dropdown - 1).
+     Note: the value of vEditableOptionIndex cannot be greater than (length of dropdown - 1)
+
+  var vEditableOptionText...;
+
+     Give the default text of the Editable option in the dropdown.
+     For eg.
+     if the editable option is <option ...>--?--</option>,
+     then set vEditableOptionText = "--?--";
+
+
+2. Setting the Width, Alignment and Flow features of the dropdown:
+
+  --------------------------------------------
+
+    (a) The code available below will give the
+      Editable Dropdown in the format:
+
+          Left Aligned,
+          VARIABLE WIDTH,
+          Left To Right Flow
+
+    --------------------------------------------
+
+    (b) To Change the Editable Dropdown to the format:
+
+          Left Aligned,
+          FIXED WIDTH,
+          Left To Right Flow
+
+      in the SELECT option (in the BODY of your HTML document),
+      give style="width:150px;".
+
+      <SELECT  style="width:150px;"
+
+      * Not giving the width style will make it 'variable'.
+      * You may vary the fixed width by altering width in the style="width:150px;"
+
+    --------------------------------------------
+
+    (c) To Change the Editable Dropdown to the format:
+
+          RIGHT Aligned,
+          Variable Width,
+          RIGHT TO LEFT FLOW
+          (Content flows right to left)
+
+      add / include
+
+          style="direction:rtl;"
+
+      into the SELECT option
+      (in the BODY of your HTML document), i.e.,
+
+        <SELECT  style="direction:rtl;"
+
+      ... leaving the rest of the parameters as they are.
+
+    --------------------------------------------
+
+    (d) To Change the Editable Dropdown to the format:
+
+          RIGHT Aligned,
+          FIXED Width,
+          RIGHT TO LEFT FLOW
+          (Content flows right to left)
+
+      add / include
+
+          style="width:150px;direction:rtl;"
+
+      into the SELECT option
+      (in the BODY of your HTML document), i.e.,
+
+        <SELECT  style="width:150px;direction:rtl;"
+
+      ... leaving the rest of the parameters as they are.
+
+      ( you may vary the fixed width by altering the style="width:150px;" )
+
+    --------------------------------------------
+
+***************************************************************
+** Note : you may wish to simply select-all and copy the entire
+contents of this script and save it as a html for testing etc..
+***************************************************************
+***************************************************************
+-->
+
+
+
+
+
+
+
+<!--
+
+************************************************************
+************************************************************
+
+STEP ONE:   Paste the following code into
+            the HEAD of your HTML document
+
+************************************************************
+************************************************************
+
+-->
+
+
+<!--******* Start of "HTML" document  *******-->
+<html>
+
+
+<!--******* Start of "HEAD" (of HTML document)  *******-->
+<head>
+
+<meta name="keywords" content="combobox, javascript, html, editable, edit, dropdown, listbox, list, combo, box, menu">
+<meta name="author" content="Subrata Chakrabarty">
+<meta name="description" content="COMBOBOX in HTML: Editable Dropdown. Javascript. One select option is Editable (like a textbox) and the rest are readonly (like a normal dropdown/listbox)">
+<meta name="robots" content="noindex,follow,noodp,noarchive,nosnippet">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+
+<title>Combobox -- Editable Dropdown / Listbox -- HTML JavaScript </title>
+
+<script type="text/javascript" src="jscripts/cbox.js"></script>
+</head>
+
+
+
+
+
+
+
+
+<!--
+
+************************************************************
+************************************************************
+
+STEP TWO:   Copy the following code into
+            the BODY of your HTML document
+
+************************************************************
+************************************************************
+
+-->
+
+
+
+<!--******* Start of "BODY" (of HTML document)  *******-->
+<body>
+
+
+
+<form name="frmName" method="post">
+<div style="text-align:center;">
+
+<hr>
+<span style="color:red;font-weight:bold;">
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">COMBOBOX</a>
+in
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">HTML</a>
+:
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">Editable</a>
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">dropdown</a> /
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">listbox</a> --
+with any one
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">select</a>
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">option</a>
+as
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">editable</a>
+(like a
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">textbox</a>
+) and the rest as readonly. Uses
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" target="_top" style="text-decoration:none;color:red;font-weight:bold;">javascript</a>.
+</span>
+<hr>
+<br>
+The FIRST option ( default : " --?-- " ) is Editable !! ... type in whatever you want!
+<br>
+<br>
+<select name="lstDropDown_A" id="lstDropDown_A" style="" onKeyDown="fnKeyDownHandler_A(this, event);" onKeyUp="fnKeyUpHandler_A(this, event); return false;" onKeyPress = "return fnKeyPressHandler_A(this, event);"  onChange="fnChangeHandler_A(this, event);">
+
+  <option value="" style="font-family:Courier,monospace;color:#ff0000;background-color:#ffff00;">--?--</option> <!-- This is the Editable Option -->
+  <option>Editable Dropdown</option>
+  <option>Combobox</option>
+  <option>Tiger</option>
+  <option>Software</option>
+  <option>India</option>
+</select>
+<br>
+<br>
+Note: Your browser needs to have Javascript Scripting enabled.
+<br>
+<br>
+For more information, please refer (and feel free to distribute the link):
+<br>
+<br>
+<a href="http://chakrabarty.com/pp_editable_dropdown.html" style="text-decoration:none;color:blue;font-weight:bold;" target="_top">
+http://chakrabarty.com/pp_editable_dropdown.html
+</a>
+<br>
+<br>
+<hr>
+</div>
+
+</form>
+
+
+
+
+
+<!--******* End of "BODY" (of HTML document)  *******-->
+</body>
+
+
+
+
+
+<!--******* End of "HTML" document  *******-->
+</html>
+
+
+
+
+
+
+
