@@ -7,4 +7,4 @@ config.core.php
 /core/config/config.inc.php
 /manager/config.core.php
 /connectors/config.core.php
-
+/assets/components/gallery/cache
