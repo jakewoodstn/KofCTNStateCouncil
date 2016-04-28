@@ -1,3 +1,5 @@
+error_log
+SCDirect/error_log
 _gsdata_/*
 .htaccess*
 .htpasswd
