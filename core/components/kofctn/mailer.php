@@ -39,9 +39,16 @@
 	{
 		$this->_modx = $modx;
 		$this->_modx->getService('mail', 'mail.modPHPMailer');
+		$this->initializeMailer();
+	}
+	
+	private function initializeMailer(){
+		$this->_modx->mail->reset();
 		$this->setHeader(modMail::MAIL_SENDER,$this->_modx->getOption('emailsender'));
 		$this->setHeader(modMail::MAIL_FROM, $this->_modx->getOption('emailsender'));
 		$this->queued=false;
+	
+	
 	}
 	
 	private function setHeader($header,$value){
@@ -52,13 +59,13 @@
 		//trigger_error('Target User:' . $this->paramArray('to'), $error_type=E_WARNING);
 		if ($kcEmail->checkReadyToSend()){
 			$this->email=$kcEmail;
-			$email=$this->email->getParam();
+			$email=$this->email->getParam(null);
 			$this->setHeader(modMail::MAIL_BODY, $email['message']);
 	        $this->setHeader(modMail::MAIL_FROM_NAME, $email['fromName']?$email['fromName']:($email['from']?$email['from']:$email['replyTo']));
 	        $this->setHeader(modMail::MAIL_SUBJECT, $email['subject']);
-	        $this->_modx->mail->address('to', $email['to'], $email['toName']?$email['toName']:$email['to']);
+	        $this->_modx->mail->address('to', $email['to'], array_key_exists('toName', $email)?$email['toName']:$email['to']);
 	        $this->_modx->mail->address('reply-to', $email['replyTo']);
-	        $this->_modx->mail->setHTML($email['html']?$email['html']:true);
+	        $this->_modx->mail->setHTML(array_key_exists('html',$email)?$email['html']:true);
 	        $this->queued=true;
 		}
 	}
@@ -70,10 +77,7 @@
 	        if (!$sent) {
 	            $this->_modx->log(modX::LOG_LEVEL_ERROR,'An error occurred while trying to send the email: '.$this->_modx->mail->mailer->ErrorInfo);
 		    }
-			$this->_modx->mail->reset();
-			$this->setHeader(modMail::MAIL_SENDER,$this->_modx->getOption('emailsender'));
-			$this->setHeader(modMail::MAIL_FROM, $this->_modx->getOption('emailsender'));
-		    $this->queued=false;
+			$this->initializeMailer();
 		    return $sent;
 		}
 	}
