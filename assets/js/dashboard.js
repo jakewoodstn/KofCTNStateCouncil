@@ -55,7 +55,7 @@ function dash_sendEmail(){
 	function callbackError(command,xhr,options,err){$("#sendmail_error").text(err);}
 	
 	
-	$("#sendmail_error").text("Sending Messages - do not leave or reload page");
+	$("#sendmail_error").text("Queueing Messages");
 	postToModx('sendmail',{"district":district,"region":region,"role":targetRole,"subject":subject,"message":message},141,callback,callbackError);	
 	
 }
