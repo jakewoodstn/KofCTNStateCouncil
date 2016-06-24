@@ -18,6 +18,7 @@ $xpdo_meta_map['degreeCalendar']= array (
     'city' => NULL,
     'state' => NULL,
     'zip' => NULL,
+    'ownerMemberId' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -92,6 +93,12 @@ $xpdo_meta_map['degreeCalendar']= array (
       'dbtype' => 'varchar',
       'precision' => '10',
       'phptype' => 'string',
+    ),
+    'ownerMemberId' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '8',
+      'phptype' => '',
     ),
   ),
 );

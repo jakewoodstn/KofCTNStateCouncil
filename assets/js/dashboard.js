@@ -60,6 +60,10 @@ function dash_sendEmail(){
 	
 }
 
+function dash_bindDelete(){
+	$('.deleteDegree').click(function(){dash_deleteDegree($(this).attr('targetDegree'));});
+}
+
 function dash_filterDegreeList(){
 
 	district=$('#district').val();
@@ -74,11 +78,22 @@ function dash_filterDegreeList(){
 	savedResult = 	$("#degreeList_list tbody").html();
 	$("#degreeList_list tbody").html('');
 
-	function callback(command,data){$("#degreeList_list tbody").append(data);}
+	function callback(command,data){$("#degreeList_list tbody").append(data);dash_bindDelete();}
 	function callbackError(command,xhr,options,err){$("#degreeList_list tbody").innerHTML(savedResult);}
 	
 	postToModx('degreelist',{"degrees":degrees,"district":district},141,callback,callbackError);	
 
+
+}
+
+function dash_deleteDegree(id){
+	
+	
+	
+	function callback(command,data){$(".deleteDegree[targetdegree='"+id+"']").parent().parent().remove();}
+	function callbackError(command,xhr,options,err){console.log("error: "+err);}
+	
+	postToModx('deletedegree',{"degreeid":id},141,callback,callbackError);
 
 }
 
