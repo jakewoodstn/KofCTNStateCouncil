@@ -8,6 +8,13 @@ $(".phoneNumber").each(function(){
 }
 /*utils end*/
 
+function dash_changeCouncilOfficer(role,action,council,memberId){
+	function callback(command,data){$('a.officerLink.'+role+'[council='+council+']').parent().html(data);}
+	function callbackError(command,xhr,options,err){console.log(err);}
+	
+	postToModx('changeOfficer',{'role':role,'action':action,'council':council,'memberId':(action=='remove'?-1:memberId)},141,callback,callbackError);
+}
+
 /* Send Email Panel Starts*/
 
 function dash_sendEmail(){ 	
@@ -88,8 +95,7 @@ function dash_filterDegreeList(){
 
 function dash_deleteDegree(id){
 	
-	
-	
+		
 	function callback(command,data){$(".deleteDegree[targetdegree='"+id+"']").parent().parent().remove();}
 	function callbackError(command,xhr,options,err){console.log("error: "+err);}
 	

@@ -11,6 +11,7 @@ $xpdo_meta_map['council']= array (
     'created_at' => NULL,
     'imagePath' => NULL,
     'districtId' => NULL,
+    'suspensionDate' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -46,6 +47,12 @@ $xpdo_meta_map['council']= array (
       'dbtype' => 'int',
       'precision' => '8',
       'phptype' => 'integer',
+      'null' => true,
+    ),
+    'suspensionDate' => 
+    array (
+      'dbtype' => 'date',
+      'phptype' => 'date',
       'null' => true,
     ),
   ),
