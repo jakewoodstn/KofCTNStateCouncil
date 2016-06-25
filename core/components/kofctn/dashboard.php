@@ -25,7 +25,7 @@
 	
 	function getDashboard($region){
 		$contentArray=array();
-		$dp = new dashboardParameters($modx,$this);
+		$dp = new dashboardParameters($this->_modx,$this);
 
 		if ($region == 'panel'){
 		    $contentArray = $this->getPanels($dp);
