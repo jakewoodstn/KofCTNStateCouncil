@@ -37,6 +37,7 @@ $viewuser = "porter";
 $viewpwd="wicke";
 
 //Current Fraternal year Default Value
+
 function GetFratYear()
 {
 
@@ -51,13 +52,12 @@ switch ($currdate['mon']){
 		$currfratyear = $currdate['year']-1;
 		break;
 	default:
-		$currfratyear = $currdate['year'];
+		$currfratyear = $currdate['year']-1;  //JW Change this back when new directory ready
 }
 
 return $currfratyear;
 
 }
-
 
 function GetNextFratYear()
 {
@@ -73,7 +73,7 @@ switch ($currdate['mon']){
 		$currfratyear = $currdate['year'];
 		break;
 	default:
-		$currfratyear = $currdate['year']+1;
+		$currfratyear = $currdate['year'];// JW Change this back when new directory ready
 }
 
 
