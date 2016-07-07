@@ -191,11 +191,12 @@ function officerAssignments($member,$currentOnly){
 
 	$q=$this->_modx->newQuery('officerAssignment');
 	$q->where(array('memberId'=>$member->get('id')));
+	$q->where(array('isCurrentAssignee'=>1));
 	if ($currentOnly){
-		$q->where(array('isCurrentAssignee'=>1));
-	}
+		$q->where(array('fraternalYearName'=>$this->currentFY()));
+			}
 	
-	$q->select(array('fraternalYearName','roleName','entityDisplayName','isCurrentAssignee'));
+	$q->select(array('fraternalYearName','roleName','entityDisplayName','isCurrentAssignee','entityDisplayId'));
 	$q->sortby('fraternalYearName','ASC');
 	//$q->prepare();
 	//print_r($q->toSQL());
@@ -250,12 +251,13 @@ function renderOfficer($chunkName,$assignments){
 		$councilDisplay=$assignment->get('entityDisplayName');
 		$fy=$assignment->get('fraternalYearName');
 		$officerDisplay = $role . ', ' . $councilDisplay . ' - FY ' . $fy;
-		
+		$edi=$assignment->get('entityDisplayId');
 		$propArray = array(
 			'councilDisplay'=>$councilDisplay,
 			'role'=>$role,
 			'fy'=>$fy,
-			'officerDisplay'=>$officerDisplay);
+			'officerDisplay'=>$officerDisplay, 
+			'entityDisplayId'=>$edi);
 		$returnText.=$this->_modx->getChunk($chunkName,$propArray);
 	}
 	return $returnText;

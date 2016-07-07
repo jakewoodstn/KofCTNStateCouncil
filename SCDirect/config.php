@@ -38,8 +38,10 @@ $viewpwd="wicke";
 
 //Current Fraternal year Default Value
 
-function GetFratYear()
+function GetFratYear($offset)
 {
+
+if (empty($offset)){$offset=0;}
 
 $currdate = getdate();
 switch ($currdate['mon']){
@@ -52,15 +54,17 @@ switch ($currdate['mon']){
 		$currfratyear = $currdate['year']-1;
 		break;
 	default:
-		$currfratyear = $currdate['year']-1;  //JW Change this back when new directory ready
+		$currfratyear = $currdate['year'];  
 }
 
-return $currfratyear;
+return $currfratyear+ $offset;
 
 }
 
-function GetNextFratYear()
+function GetNextFratYear($offset)
 {
+
+if (empty($offset)){$offset=0;}
 
 $currdate = getdate();
 switch ($currdate['mon']){
@@ -73,11 +77,11 @@ switch ($currdate['mon']){
 		$currfratyear = $currdate['year'];
 		break;
 	default:
-		$currfratyear = $currdate['year'];// JW Change this back when new directory ready
+		$currfratyear = $currdate['year']+1;
 }
 
 
-return $currfratyear;
+return $currfratyear+$offset;
 
 }
 
