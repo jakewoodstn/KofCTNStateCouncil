@@ -9,7 +9,14 @@
 
 	
  	function __construct($modx){
+ 	
+ 	
 		$this->_modx = $modx;
+	
+		$this->_modx->setDebug(E_ALL & ~E_NOTICE); // sets error_reporting to everything except NOTICE remarks
+		$this->_modx->setLogLevel(modX::LOG_LEVEL_DEBUG);	
+
+	
 		require_once('dashboardComponent.php');
 		require_once('dashboardParameters.php');
 	}
@@ -28,12 +35,12 @@
 		$dp = new dashboardParameters($this->_modx,$this);
 
 		if ($region == 'panel'){
+		$this->_modx->log(modX::LOG_LEVEL_DEBUG, 'Hello World 1');
 		    $contentArray = $this->getPanels($dp);
+				$this->_modx->log(modX::LOG_LEVEL_DEBUG, 'Hello World 2');
 		} elseif ($region =='gutter') {
 			$contentArray = $this->getGutters($dp);
 		}
-		
-
 		
 		return $this->collapse($contentArray);
 		
@@ -55,8 +62,9 @@
 	}
 	
 	function getPanels($dp){
+			$this->_modx->log(modX::LOG_LEVEL_DEBUG, 'Hello World 3');
 		$panels = $this->_modx->getCollection('memberDashboardComponent',array("memberNumber"=>$this->_modx->user->username,"pageColumn"=>'panel'));
-		
+				$this->_modx->log(modX::LOG_LEVEL_DEBUG, 'Hello World 4');
 		$dashpanels = array();
 		$rendered = array();
 		
