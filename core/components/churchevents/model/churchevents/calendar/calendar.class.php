@@ -1981,6 +1981,10 @@ ORDER BY ce.start_date ASC
     	   case 'Second Degree':
        	   case 'Third Degree':
        	   case 'Fourth Degree':
+       	   case 'Admission Degree':
+       	   case 'Formation Degree':
+       	   case 'Knighthood Degree':
+       	   case 'Patriotic Degree':
        			$html.='<span>Host Council: '.$council->get('councilNumber').' - '.$council->get('name').'</span><br/>';
        	   		$html.='<span>Location:'.$myAddress['city'].'</span><br/><a href=\'http://maps.google.com?q='.$mapLink.'\'>Click to see map:<img class=\'mapicon\' src=\''.$mapIconPath.'\' alt=\'Click to show map\'/></a><br/><br/>';
        	   		$html.='<span>Start Time: '.date_format(date_create($properties['public_start']), 'g:i A').'</span><br/>';
