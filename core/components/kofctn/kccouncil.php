@@ -170,9 +170,10 @@
 			$value['meetingType']=$m->get('meetingName');
 						
 			$ku=new kcUtil($this->_modx);
-			$value['meetingDay']=$ku->ordinal($value['weekOfMonth']) .' '. $ku->dayOfWeek($value['dayOfWeek'],1);
+			$value['meetingDay']=$value['weekOfMonth']?$ku->ordinal($value['weekOfMonth']) .' '. $ku->dayOfWeek($value['dayOfWeek'],1):'';
+			
 			$d=new DateTime($value['timeOfDay']);
-			$value['meetingTime'] = $d->format('g:i A');
+			$value['meetingTime'] = $value['timeOfDay']?$d->format('g:i A'):'';
 
 			$rows .= $this->_modx->getChunk('kofctn_councilMeeting_tableRow',$value);
 		}
@@ -188,7 +189,7 @@
 				$officerRoster[$roster->roleName] = $roster->firstName . ' ' . $roster->lastName;
 			}
 		}
-		return $officerRoster;
+		return array();//$officerRoster;
 	}
 
 	
