@@ -189,7 +189,7 @@
 				$officerRoster[$roster->roleName] = $roster->firstName . ' ' . $roster->lastName;
 			}
 		}
-		return array();//$officerRoster;
+		return array();//$officerRoster;  // jw commented 8/31/16 until error in view figured out
 	}
 
 	
