@@ -1971,7 +1971,7 @@ ORDER BY ce.start_date ASC
     	
 
     	$mapLink = urlencode($myAddress['street1'].' '.$myAddress['street2'].' '.$myAddress['city'].' '.$myAddress['state'].' '.$myAddress['zip']);
-    } else {if (($properties['category']!='Important Deadline')&& ($properties['event_title']!= 'State Convention')){return array('event_summary'=>'Event details not found.');}}
+    } else {if (($properties['category']!='State Meeting') &&($properties['category']!='Important Deadline')&& ($properties['event_title']!= 'State Convention')){$this->modx->log(xPDO::LOG_LEVEL_INFO,$properties['category']);return array('event_summary'=>'Event details not found.');}}
     	
     
     	$html='<div>';
